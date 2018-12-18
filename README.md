@@ -9,6 +9,9 @@ Inspired by this [tweet](https://twitter.com/risboo6909/status/10750544977586298
 Each subfolder has a Makefile.
 To benchmark, just run `make` from inside one of the directories.
 
+## Benchmark Results
+Tests were run on my 2018 MacBook Pro (2.6GHz i7, 16 GB 2400MHz DDR4). 
+
 | Language            | Time          |
 |:-------------------:|:------------- |
 | Rust (parallel)     | 24.387410000s |
