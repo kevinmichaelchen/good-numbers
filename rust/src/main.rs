@@ -14,7 +14,7 @@ fn is_good_number(cur_num: &u32) -> bool {
     (*cur_num % sum) == 0
 }
 
-fn parallel_test() {
+fn parallel_iter() {
     let upper_bound: u32 = 1_000_000_000;
     let start = SystemTime::now();
     println!(
@@ -29,7 +29,7 @@ fn parallel_test() {
              done.duration_since(start).expect("Time went backwards"));
 }
 
-fn sequential_test() {
+fn sequential_iter() {
     let upper_bound: u32 = 1_000_000_000;
     let start = SystemTime::now();
     println!(
@@ -44,8 +44,29 @@ fn sequential_test() {
              done.duration_since(start).expect("Time went backwards"));
 }
 
+fn sequential_for_loop() {
+    let upper_bound: u32 = 1_000_000_000;
+    let start = SystemTime::now();
+    let mut arr : Vec<u32> = vec![];
+
+    for i in 1..=upper_bound {
+        if is_good_number(&i) {
+            arr.push(i)
+        }
+    }
+
+    println!(
+        "There are {:?} good numbers",
+        arr.len()
+    );
+    let done = SystemTime::now();
+    println!("Program duration: {:?}",
+             done.duration_since(start).expect("Time went backwards"));
+}
+
 
 fn main() {
-//    parallel_test()
-    sequential_test()
+//    parallel_iter();
+    sequential_iter();
+    sequential_for_loop();
 }
