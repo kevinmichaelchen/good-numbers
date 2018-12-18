@@ -14,7 +14,7 @@ fn is_good_number(cur_num: &u32) -> bool {
     (*cur_num % sum) == 0
 }
 
-fn main() {
+fn parallel_test() {
     let upper_bound: u32 = 1_000_000_000;
     let start = SystemTime::now();
     println!(
@@ -27,4 +27,25 @@ fn main() {
     let done = SystemTime::now();
     println!("Program duration: {:?}",
              done.duration_since(start).expect("Time went backwards"));
+}
+
+fn sequential_test() {
+    let upper_bound: u32 = 1_000_000_000;
+    let start = SystemTime::now();
+    println!(
+        "There are {:?} good numbers",
+        (1..upper_bound + 1)
+            .into_iter()
+            .filter(is_good_number)
+            .count()
+    );
+    let done = SystemTime::now();
+    println!("Program duration: {:?}",
+             done.duration_since(start).expect("Time went backwards"));
+}
+
+
+fn main() {
+//    parallel_test()
+    sequential_test()
 }
