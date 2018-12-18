@@ -25,6 +25,6 @@ fn main() {
             .count()
     );
     let done = SystemTime::now();
-    println!("Program took {:?} to run",
+    println!("Program duration: {:?}",
              done.duration_since(start).expect("Time went backwards"));
 }

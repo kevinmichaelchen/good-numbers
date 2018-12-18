@@ -24,10 +24,9 @@ func main() {
 	for i := 1; i <= UpperBound; i++ {
 		if isGoodNumber(i) {
 			goodNumbers = append(goodNumbers, i)
-			fmt.Println(i)
 		}
 	}
 	done := time.Now()
-	fmt.Printf("%v", goodNumbers)
-	fmt.Printf("Done after %v", done.Sub(start))
+	fmt.Printf("There are %d good numbers\n", len(goodNumbers))
+	fmt.Printf("Program duration: %v\n", done.Sub(start))
 }
