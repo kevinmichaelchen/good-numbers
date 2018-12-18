@@ -10,6 +10,6 @@ Each subfolder has a Makefile.
 To benchmark, just run `make` from inside one of the directories.
 
 | Language | Time          |
-| -------- |:-------------:|
-| Rust     | 24.38741s     |
+|:--------:|:------------- |
+| Rust     | 24.387410000s |
 | Go       | 24.672643608s |
