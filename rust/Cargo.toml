@@ -1,0 +1,9 @@
+[package]
+name = "good-numbers"
+version = "0.1.0"
+authors = ["Kevin Chen <kevinmichaelchen@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rayon = "1.0"
+

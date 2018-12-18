@@ -1,3 +1,7 @@
+extern crate rayon;
+use rayon::prelude::*;
+use std::time::{SystemTime};
+
 #[inline]
 fn is_good_number(cur_num: &u32) -> bool {
     let mut sum = 0;
@@ -12,11 +16,15 @@ fn is_good_number(cur_num: &u32) -> bool {
 
 fn main() {
     let upper_bound: u32 = 1_000_000_000;
+    let start = SystemTime::now();
     println!(
-        "{:?}",
+        "There are {:?} good numbers",
         (1..upper_bound + 1)
             .into_par_iter()
             .filter(is_good_number)
             .count()
     );
+    let done = SystemTime::now();
+    println!("Program took {:?} to run",
+             done.duration_since(start).expect("Time went backwards"));
 }

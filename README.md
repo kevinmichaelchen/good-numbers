@@ -8,3 +8,8 @@ Inspired by this [tweet](https://twitter.com/risboo6909/status/10750544977586298
 
 Each subfolder has a Makefile.
 To benchmark, just run `make` from inside one of the directories.
+
+| Language | Time       |
+| -------- |:----------:|
+| Rust     | 24.38741s  |
+| Go       |            |
